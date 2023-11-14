@@ -1,0 +1,21 @@
+<nav class="navbar" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+  <!-- Header with "wikinimous" and "Create a new article" link -->
+  <div class="row" class="navbar-brand">
+      <h1><a href="<%= articles_path %>">wikinimous</a>
+      <%= link_to "Create a new article", new_article_path %></h1>
+  </div>
+  </div>
+</nav>
+
+  <!-- Article List -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+  <% @articles.each do |article| %>
+    <%= link_to article.title, article_path(article) %>
+    <p><%= article.content %></p>
+  <% end %>
+      </div>
+    </div>
+  </div>
